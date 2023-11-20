@@ -1,0 +1,60 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: monospace;
+    background: #111;
+    color: whitesmoke;
+    overflow: hidden;
+    position: relative;
+}
+
+.container {
+    z-index: 2;
+}
+
+.blob {
+    height: 100px;
+    aspect-ratio: 1;
+    background: linear-gradient(to right, white, red);
+    position: absolute;
+    left: 50%;
+    right: 50%;
+    transform: -50% -50%;
+    border-radius: 50%;
+    animation: rotate 20s infinite;
+}
+
+.blur {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    backdrop-filter: blur(100px);
+    /* z-index: -1; */
+}
+
+@keyframes rotate {
+    from {
+        rotate: 0deg;
+    }
+
+    50% {
+        scale: 1 1.5;
+    }
+
+    to {
+        rotate: 360deg;
+    }
+}
+
+h1 {
+    cursor: pointer;
+    font-size: 5rem;
+}
